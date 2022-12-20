@@ -12,6 +12,10 @@
 		FB14939A295215F900EA1705 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB149399295215F900EA1705 /* ViewController.swift */; };
 		FB14939F295215FB00EA1705 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB14939E295215FB00EA1705 /* Assets.xcassets */; };
 		FB1493A2295215FB00EA1705 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB1493A0295215FB00EA1705 /* LaunchScreen.storyboard */; };
+		FB1493AB2952229600EA1705 /* BottomStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1493AA2952229600EA1705 /* BottomStackView.swift */; };
+		FB1493AD2952257400EA1705 /* TopStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1493AC2952257400EA1705 /* TopStackView.swift */; };
+		FB1493AF2952266A00EA1705 /* MainStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1493AE2952266A00EA1705 /* MainStackView.swift */; };
+		FB1493B129522A9300EA1705 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1493B029522A9300EA1705 /* CardView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +26,10 @@
 		FB14939E295215FB00EA1705 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FB1493A1295215FB00EA1705 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FB1493A3295215FB00EA1705 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FB1493AA2952229600EA1705 /* BottomStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomStackView.swift; sourceTree = "<group>"; };
+		FB1493AC2952257400EA1705 /* TopStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopStackView.swift; sourceTree = "<group>"; };
+		FB1493AE2952266A00EA1705 /* MainStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainStackView.swift; sourceTree = "<group>"; };
+		FB1493B029522A9300EA1705 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +62,7 @@
 		FB149394295215F900EA1705 /* Tinder-Clone */ = {
 			isa = PBXGroup;
 			children = (
+				FB1493A92952228300EA1705 /* Views */,
 				FB149395295215F900EA1705 /* AppDelegate.swift */,
 				FB149397295215F900EA1705 /* SceneDelegate.swift */,
 				FB149399295215F900EA1705 /* ViewController.swift */,
@@ -62,6 +71,17 @@
 				FB1493A3295215FB00EA1705 /* Info.plist */,
 			);
 			path = "Tinder-Clone";
+			sourceTree = "<group>";
+		};
+		FB1493A92952228300EA1705 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FB1493AA2952229600EA1705 /* BottomStackView.swift */,
+				FB1493AC2952257400EA1705 /* TopStackView.swift */,
+				FB1493AE2952266A00EA1705 /* MainStackView.swift */,
+				FB1493B029522A9300EA1705 /* CardView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -134,8 +154,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FB1493B129522A9300EA1705 /* CardView.swift in Sources */,
 				FB14939A295215F900EA1705 /* ViewController.swift in Sources */,
 				FB149396295215F900EA1705 /* AppDelegate.swift in Sources */,
+				FB1493AF2952266A00EA1705 /* MainStackView.swift in Sources */,
+				FB1493AB2952229600EA1705 /* BottomStackView.swift in Sources */,
+				FB1493AD2952257400EA1705 /* TopStackView.swift in Sources */,
 				FB149398295215F900EA1705 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
