@@ -7,9 +7,14 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class HomeController: UIViewController {
     
     // MARK: - Properties
+    
+    let users = [
+        User(name: "Kelly", age: 23, profession: "Musij DJ", imageName: "lady5c"),
+        User(name: "Jane", age: 18, profession: "Teacher", imageName: "lady4c")
+    ]
     
     // MARK: - UI Elements
     
@@ -35,6 +40,8 @@ class ViewController: UIViewController {
         mainStackView.bringSubviewToFront(middleView)
         mainStackView.isLayoutMarginsRelativeArrangement = true
         mainStackView.layoutMargins = .init(top: 0, left: 12, bottom: 0, right: 12)
+        middleView.translatesAutoresizingMaskIntoConstraints = false
+        
         
         NSLayoutConstraint.activate([
             mainStackView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
@@ -47,21 +54,18 @@ class ViewController: UIViewController {
     }
     
     func configureCard() {
-        let cardView = CardView()
-        
-        middleView.addSubview(cardView)
-        
-        NSLayoutConstraint.activate([
-            cardView.leadingAnchor.constraint(equalTo: middleView.leadingAnchor),
-            cardView.trailingAnchor.constraint(equalTo: middleView.trailingAnchor),
-            cardView.topAnchor.constraint(equalTo: middleView.topAnchor),
-            cardView.bottomAnchor.constraint(equalTo: middleView.bottomAnchor)
-        ])
+        users.forEach { user in
+            let cardView = CardView()
+            cardView.user = user
+            cardView.imageView.image = UIImage(named: user.imageName)
+            middleView.addSubview(cardView)
+
+            NSLayoutConstraint.activate([
+                cardView.leadingAnchor.constraint(equalTo: middleView.leadingAnchor),
+                cardView.trailingAnchor.constraint(equalTo: middleView.trailingAnchor),
+                cardView.topAnchor.constraint(equalTo: middleView.topAnchor),
+                cardView.bottomAnchor.constraint(equalTo: middleView.bottomAnchor)
+            ])
+        }
     }
-    
-    // MARK: - Gestures
-    
-    
-    
-    
 }

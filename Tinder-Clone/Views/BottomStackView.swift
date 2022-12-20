@@ -33,5 +33,7 @@ class BottomStackView: UIStackView {
     func configure() {
         buttons.forEach { addArrangedSubview($0) }
         distribution = .fillEqually
+        translatesAutoresizingMaskIntoConstraints = false
+        heightAnchor.constraint(equalToConstant: 120).isActive = true
     }
 }
