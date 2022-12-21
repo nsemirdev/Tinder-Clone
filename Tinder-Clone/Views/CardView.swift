@@ -8,27 +8,19 @@
 import UIKit
 
 class CardView: UIView {
-
     
-    var user: User? {
+    var cardViewModel: CardViewModel! {
         didSet {
-            guard let user else { return }
-            //nameLabel.text = user.name
-            let attributedText = NSMutableAttributedString(string: user.name, attributes: [.font: UIFont.systemFont(ofSize: 30, weight: .heavy)])
-            attributedText.append(NSAttributedString(string: " \(user.age)", attributes: [.font: UIFont.systemFont(ofSize: 24, weight: .regular)]))
-            attributedText.append(NSAttributedString(string: "\n\(user.profession)", attributes: [.font: UIFont.systemFont(ofSize: 20, weight: .regular)]))
-            informationLabel.attributedText = attributedText
-//            informationLabel.text = "\(user.name) \(user.age)\n\(user.profession)"
-            //ageLabel.text = "\(user.age)"
+            imageView.image = UIImage(named: cardViewModel.imageName)
+            informationLabel.attributedText = cardViewModel.attributedString
+            informationLabel.textAlignment = cardViewModel.textAlignment
         }
     }
-    
-    
+
     // MARK: - UI Elements
     
     let imageView           = UIImageView(image: #imageLiteral(resourceName: "lady5c.jpg"))
     let informationLabel    = UILabel()
-
     
     // MARK: - Inits
     

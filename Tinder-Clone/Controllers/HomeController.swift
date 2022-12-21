@@ -11,11 +11,11 @@ class HomeController: UIViewController {
     
     // MARK: - Properties
     
-    let users = [
-        User(name: "Kelly", age: 23, profession: "Musij DJ", imageName: "lady5c"),
-        User(name: "Jane", age: 18, profession: "Teacher", imageName: "lady4c")
+    let cardViewModels = [
+        User(name: "Kelly", age: 23, profession: "Musij DJ", imageName: "lady5c").toCardViewModel(),
+        User(name: "Jane", age: 18, profession: "Teacher", imageName: "lady4c").toCardViewModel(),
+        Advertiser(title: "Slide Out Menu", brandName: "Lets Build That App", posterPhotoName: "slide_out_menu_poster").toCardViewModel()
     ]
-    
     // MARK: - UI Elements
     
     let mainStackView   = MainStackView()
@@ -42,7 +42,6 @@ class HomeController: UIViewController {
         mainStackView.layoutMargins = .init(top: 0, left: 12, bottom: 0, right: 12)
         middleView.translatesAutoresizingMaskIntoConstraints = false
         
-        
         NSLayoutConstraint.activate([
             mainStackView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             mainStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
@@ -54,12 +53,11 @@ class HomeController: UIViewController {
     }
     
     func configureCard() {
-        users.forEach { user in
+        cardViewModels.forEach { vm in
             let cardView = CardView()
-            cardView.user = user
-            cardView.imageView.image = UIImage(named: user.imageName)
+            cardView.cardViewModel = vm
+            
             middleView.addSubview(cardView)
-
             NSLayoutConstraint.activate([
                 cardView.leadingAnchor.constraint(equalTo: middleView.leadingAnchor),
                 cardView.trailingAnchor.constraint(equalTo: middleView.trailingAnchor),
