@@ -12,10 +12,11 @@ class HomeController: UIViewController {
     // MARK: - Properties
     
     let cardViewModels = [
-        User(name: "Kelly", age: 23, profession: "Musij DJ", imageName: "lady5c").toCardViewModel(),
-        User(name: "Jane", age: 18, profession: "Teacher", imageName: "lady4c").toCardViewModel(),
+        User(name: "Kelly", age: 23, profession: "Musij DJ", imageNames: ["lady5c", "kelly1", "kelly2"]).toCardViewModel(),
+        User(name: "Jane", age: 18, profession: "Teacher", imageNames: ["jane2", "lady4c", "jane3"]).toCardViewModel(),
         Advertiser(title: "Slide Out Menu", brandName: "Lets Build That App", posterPhotoName: "slide_out_menu_poster").toCardViewModel()
     ]
+    
     // MARK: - UI Elements
     
     let mainStackView   = MainStackView()

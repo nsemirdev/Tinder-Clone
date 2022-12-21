@@ -18,7 +18,7 @@ struct Advertiser {
         attributedString.append(NSAttributedString(string: "\n\(brandName)", attributes: [.font: UIFont.systemFont(ofSize: 24, weight: .regular)]))
         
         
-        return CardViewModel(imageName: posterPhotoName,
+        return CardViewModel(imageNames: [posterPhotoName],
                              attributedString: attributedString,
                              textAlignment: .center)
     }
