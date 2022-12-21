@@ -27,7 +27,6 @@ class CardView: UIView {
         }
     }
     
-    
     // MARK: - UI Elements
     
     let imageView           = UIImageView(image: #imageLiteral(resourceName: "lady5c.jpg"))
@@ -110,8 +109,6 @@ class CardView: UIView {
         barsStackView.spacing = 4
         barsStackView.axis = .horizontal
         barsStackView.distribution = .fillEqually
-
-        
     }
     
     func setupGesture() {

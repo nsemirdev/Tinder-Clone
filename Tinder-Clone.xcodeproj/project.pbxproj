@@ -19,6 +19,9 @@
 		FB1493B429523CCB00EA1705 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1493B329523CCB00EA1705 /* User.swift */; };
 		FB1493B82952457400EA1705 /* CardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1493B72952457300EA1705 /* CardViewModel.swift */; };
 		FB1493BA2952F07800EA1705 /* Advertiser.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1493B92952F07800EA1705 /* Advertiser.swift */; };
+		FBAC1B6E295349E60035A311 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBAC1B6D295349E60035A311 /* RegistrationViewController.swift */; };
+		FBAC1B702953634A0035A311 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBAC1B6F2953634A0035A311 /* CustomTextField.swift */; };
+		FBAC1B722953856A0035A311 /* RegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBAC1B712953856A0035A311 /* RegistrationViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +39,9 @@
 		FB1493B329523CCB00EA1705 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		FB1493B72952457300EA1705 /* CardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewModel.swift; sourceTree = "<group>"; };
 		FB1493B92952F07800EA1705 /* Advertiser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Advertiser.swift; sourceTree = "<group>"; };
+		FBAC1B6D295349E60035A311 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
+		FBAC1B6F2953634A0035A311 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		FBAC1B712953856A0035A311 /* RegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,15 +74,15 @@
 		FB149394295215F900EA1705 /* Tinder-Clone */ = {
 			isa = PBXGroup;
 			children = (
-				FB1493B62952456100EA1705 /* ViewModels */,
-				FB1493B5295244C800EA1705 /* Controllers */,
-				FB1493B229523CBF00EA1705 /* Models */,
-				FB1493A92952228300EA1705 /* Views */,
 				FB149395295215F900EA1705 /* AppDelegate.swift */,
 				FB149397295215F900EA1705 /* SceneDelegate.swift */,
 				FB14939E295215FB00EA1705 /* Assets.xcassets */,
 				FB1493A0295215FB00EA1705 /* LaunchScreen.storyboard */,
 				FB1493A3295215FB00EA1705 /* Info.plist */,
+				FB1493B62952456100EA1705 /* ViewModels */,
+				FB1493B5295244C800EA1705 /* Controllers */,
+				FB1493B229523CBF00EA1705 /* Models */,
+				FB1493A92952228300EA1705 /* Views */,
 			);
 			path = "Tinder-Clone";
 			sourceTree = "<group>";
@@ -88,6 +94,7 @@
 				FB1493AC2952257400EA1705 /* TopStackView.swift */,
 				FB1493AE2952266A00EA1705 /* MainStackView.swift */,
 				FB1493B029522A9300EA1705 /* CardView.swift */,
+				FBAC1B6F2953634A0035A311 /* CustomTextField.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -105,6 +112,7 @@
 			isa = PBXGroup;
 			children = (
 				FB149399295215F900EA1705 /* HomeController.swift */,
+				FBAC1B6D295349E60035A311 /* RegistrationViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -113,6 +121,7 @@
 			isa = PBXGroup;
 			children = (
 				FB1493B72952457300EA1705 /* CardViewModel.swift */,
+				FBAC1B712953856A0035A311 /* RegistrationViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -190,10 +199,13 @@
 				FB1493BA2952F07800EA1705 /* Advertiser.swift in Sources */,
 				FB1493B129522A9300EA1705 /* CardView.swift in Sources */,
 				FB14939A295215F900EA1705 /* HomeController.swift in Sources */,
+				FBAC1B6E295349E60035A311 /* RegistrationViewController.swift in Sources */,
 				FB149396295215F900EA1705 /* AppDelegate.swift in Sources */,
 				FB1493AF2952266A00EA1705 /* MainStackView.swift in Sources */,
 				FB1493B429523CCB00EA1705 /* User.swift in Sources */,
 				FB1493AB2952229600EA1705 /* BottomStackView.swift in Sources */,
+				FBAC1B702953634A0035A311 /* CustomTextField.swift in Sources */,
+				FBAC1B722953856A0035A311 /* RegistrationViewModel.swift in Sources */,
 				FB1493AD2952257400EA1705 /* TopStackView.swift in Sources */,
 				FB149398295215F900EA1705 /* SceneDelegate.swift in Sources */,
 				FB1493B82952457400EA1705 /* CardViewModel.swift in Sources */,
@@ -340,8 +352,8 @@
 				INFOPLIST_FILE = "Tinder-Clone/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -349,9 +361,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "dev.nsemir.Tinder-Clone";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -367,8 +382,8 @@
 				INFOPLIST_FILE = "Tinder-Clone/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -376,9 +391,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "dev.nsemir.Tinder-Clone";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

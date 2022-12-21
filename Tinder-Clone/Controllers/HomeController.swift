@@ -29,6 +29,7 @@ class HomeController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configure()
+        (topStackView.subviews[0] as! UIButton).addTarget(self, action: #selector(handleSettings), for: .touchUpInside)
     }
     
     // MARK: - Methods
@@ -66,5 +67,11 @@ class HomeController: UIViewController {
                 cardView.bottomAnchor.constraint(equalTo: middleView.bottomAnchor)
             ])
         }
+    }
+    
+    @objc func handleSettings() {
+        let vc = RegistrationViewController()
+        vc.modalPresentationStyle = .fullScreen
+        present(vc, animated: true)
     }
 }
