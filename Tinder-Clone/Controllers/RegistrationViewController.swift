@@ -6,11 +6,13 @@
 //
 
 import UIKit
+import Firebase
+import JGProgressHUD
 
 class RegistrationViewController: UIViewController {
     
     let viewModel = RegistrationViewModel()
-
+    
     // MARK: - UI Elements
     
     let selectPhotoButon: UIButton = {
@@ -21,6 +23,9 @@ class RegistrationViewController: UIViewController {
         button.titleLabel?.font = .systemFont(ofSize: 32, weight: .heavy)
         button.heightAnchor.constraint(equalToConstant: 280).isActive = true
         button.layer.cornerRadius = 16
+        button.addTarget(nil, action: #selector(handleSelectPhoto), for: .touchUpInside)
+        button.contentMode = .scaleAspectFill
+        button.clipsToBounds = true
         return button
     }()
     
@@ -57,22 +62,14 @@ class RegistrationViewController: UIViewController {
         button.isEnabled = false
         button.heightAnchor.constraint(equalToConstant: 50).isActive = true
         button.titleLabel?.font = .systemFont(ofSize: 18, weight: .heavy)
+        button.addTarget(nil, action: #selector(handleRegister), for: .touchUpInside)
+        
         return button
     }()
     
     lazy var stackView = UIStackView(arrangedSubviews: [selectPhotoButon, fullNameTextField, emailTextField, passwordTextField, registerButton])
     
     // MARK: - Lifecycle
-    
-    @objc func handleTextChanged(textField: UITextField) {
-        if textField == fullNameTextField {
-            viewModel.fullName = fullNameTextField.text
-        } else if textField == emailTextField {
-            viewModel.email = emailTextField.text
-        } else {
-            viewModel.password = passwordTextField.text
-        }
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -89,14 +86,64 @@ class RegistrationViewController: UIViewController {
     
     // MARK: - Methods
     
+    @objc fileprivate func handleSelectPhoto() {
+        let imagePickerController = UIImagePickerController()
+        imagePickerController.delegate = self
+        present(imagePickerController, animated: true)
+    }
+    
+    let registeringHUD = JGProgressHUD(style: .dark)
+    
+    @objc fileprivate func handleRegister() {
+        self.handleKeyboardHide()
+        
+        viewModel.performRegistration { [weak self] error in
+            guard let error else { return }
+            self?.showHUDWithError(error: error)
+        }
+    }
+    
+    func showHUDWithError(error: Error) {
+        let hud = JGProgressHUD(style: .dark)
+        hud.textLabel.text = "Failed registration"
+        hud.detailTextLabel.text = error.localizedDescription
+        hud.show(in: self.view)
+        hud.dismiss(afterDelay: 4)
+    }
+    
+    @objc func handleTextChanged(textField: UITextField) {
+        if textField == fullNameTextField {
+            viewModel.fullName = fullNameTextField.text
+        } else if textField == emailTextField {
+            viewModel.email = emailTextField.text
+        } else {
+            viewModel.password = passwordTextField.text
+        }
+    }
+    
     fileprivate func setupRegistrationViewModelObserver() {
-        viewModel.isFormValidObserver = { isFormValid in
+        viewModel.bindableIsFormValid.bind { [unowned self] isFormValid in
+            guard let isFormValid else { return }
             if isFormValid {
                 self.registerButton.isEnabled = true
                 self.registerButton.backgroundColor = .systemRed
             } else {
                 self.registerButton.isEnabled = false
                 self.registerButton.backgroundColor = .lightGray
+            }
+        }
+        
+        viewModel.bindableImage.bind { [unowned self] img in
+            self.selectPhotoButon.setImage(img?.withRenderingMode(.alwaysOriginal), for: .normal)
+        }
+        
+        viewModel.bindableIsRegistering.bind { [unowned self] isRegistering in
+            guard let isRegistering else { return }
+            if isRegistering {
+                self.registeringHUD.textLabel.text = "Registering..."
+                self.registeringHUD.show(in: view)
+            } else {
+                self.registeringHUD.dismiss()
             }
         }
     }
@@ -118,6 +165,7 @@ class RegistrationViewController: UIViewController {
     }
     
     @objc func handleKeyboardHide() {
+//        view.endEditing(true)
         UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseOut) {
             self.view.transform = .identity
         }
@@ -132,7 +180,6 @@ class RegistrationViewController: UIViewController {
     fileprivate func setupLayout() {
         view.backgroundColor = .systemBackground
         setupGradiantLayer()
-        
         
         view.addSubview(stackView)
         stackView.translatesAutoresizingMaskIntoConstraints = false
@@ -154,4 +201,17 @@ class RegistrationViewController: UIViewController {
         view.layer.addSublayer(gradiantLayer)
     }
     
+}
+
+extension RegistrationViewController: UIImagePickerControllerDelegate & UINavigationControllerDelegate {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        let image = info[.originalImage] as? UIImage
+        
+        viewModel.bindableImage.value = image
+        dismiss(animated: true)
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        dismiss(animated: true)
+    }
 }

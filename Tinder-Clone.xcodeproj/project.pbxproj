@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		834AECC96F9819C21AF9AF7F /* Pods_Tinder_Clone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74C77686099A318CCB279F84 /* Pods_Tinder_Clone.framework */; };
 		FB149396295215F900EA1705 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB149395295215F900EA1705 /* AppDelegate.swift */; };
 		FB149398295215F900EA1705 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB149397295215F900EA1705 /* SceneDelegate.swift */; };
 		FB14939A295215F900EA1705 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB149399295215F900EA1705 /* HomeController.swift */; };
@@ -19,12 +20,17 @@
 		FB1493B429523CCB00EA1705 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1493B329523CCB00EA1705 /* User.swift */; };
 		FB1493B82952457400EA1705 /* CardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1493B72952457300EA1705 /* CardViewModel.swift */; };
 		FB1493BA2952F07800EA1705 /* Advertiser.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB1493B92952F07800EA1705 /* Advertiser.swift */; };
+		FB236DFA295466D000DEDF22 /* Bindable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB236DF9295466D000DEDF22 /* Bindable.swift */; };
 		FBAC1B6E295349E60035A311 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBAC1B6D295349E60035A311 /* RegistrationViewController.swift */; };
 		FBAC1B702953634A0035A311 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBAC1B6F2953634A0035A311 /* CustomTextField.swift */; };
 		FBAC1B722953856A0035A311 /* RegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBAC1B712953856A0035A311 /* RegistrationViewModel.swift */; };
+		FBAC1B7429545C5B0035A311 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FBAC1B7329545C5B0035A311 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		05FB818E397F046D88589AD1 /* Pods-Tinder-Clone.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tinder-Clone.debug.xcconfig"; path = "Target Support Files/Pods-Tinder-Clone/Pods-Tinder-Clone.debug.xcconfig"; sourceTree = "<group>"; };
+		74C77686099A318CCB279F84 /* Pods_Tinder_Clone.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tinder_Clone.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7AEF1FDE7CD5AC888E7EC592 /* Pods-Tinder-Clone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tinder-Clone.release.xcconfig"; path = "Target Support Files/Pods-Tinder-Clone/Pods-Tinder-Clone.release.xcconfig"; sourceTree = "<group>"; };
 		FB149392295215F900EA1705 /* Tinder-Clone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tinder-Clone.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB149395295215F900EA1705 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FB149397295215F900EA1705 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -39,9 +45,11 @@
 		FB1493B329523CCB00EA1705 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		FB1493B72952457300EA1705 /* CardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewModel.swift; sourceTree = "<group>"; };
 		FB1493B92952F07800EA1705 /* Advertiser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Advertiser.swift; sourceTree = "<group>"; };
+		FB236DF9295466D000DEDF22 /* Bindable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bindable.swift; sourceTree = "<group>"; };
 		FBAC1B6D295349E60035A311 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		FBAC1B6F2953634A0035A311 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		FBAC1B712953856A0035A311 /* RegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewModel.swift; sourceTree = "<group>"; };
+		FBAC1B7329545C5B0035A311 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,17 +57,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				834AECC96F9819C21AF9AF7F /* Pods_Tinder_Clone.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4A8CFB78737B6D49DE66C5CD /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				05FB818E397F046D88589AD1 /* Pods-Tinder-Clone.debug.xcconfig */,
+				7AEF1FDE7CD5AC888E7EC592 /* Pods-Tinder-Clone.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		67C53C5DBDA232CE66AEBDAC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				74C77686099A318CCB279F84 /* Pods_Tinder_Clone.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		FB149389295215F900EA1705 = {
 			isa = PBXGroup;
 			children = (
 				FB149394295215F900EA1705 /* Tinder-Clone */,
 				FB149393295215F900EA1705 /* Products */,
+				4A8CFB78737B6D49DE66C5CD /* Pods */,
+				67C53C5DBDA232CE66AEBDAC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -79,6 +107,7 @@
 				FB14939E295215FB00EA1705 /* Assets.xcassets */,
 				FB1493A0295215FB00EA1705 /* LaunchScreen.storyboard */,
 				FB1493A3295215FB00EA1705 /* Info.plist */,
+				FBAC1B7329545C5B0035A311 /* GoogleService-Info.plist */,
 				FB1493B62952456100EA1705 /* ViewModels */,
 				FB1493B5295244C800EA1705 /* Controllers */,
 				FB1493B229523CBF00EA1705 /* Models */,
@@ -113,6 +142,7 @@
 			children = (
 				FB149399295215F900EA1705 /* HomeController.swift */,
 				FBAC1B6D295349E60035A311 /* RegistrationViewController.swift */,
+				FB236DF9295466D000DEDF22 /* Bindable.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -133,9 +163,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FB1493A6295215FB00EA1705 /* Build configuration list for PBXNativeTarget "Tinder-Clone" */;
 			buildPhases = (
+				862B8833E3632455499D7B02 /* [CP] Check Pods Manifest.lock */,
 				FB14938E295215F900EA1705 /* Sources */,
 				FB14938F295215F900EA1705 /* Frameworks */,
 				FB149390295215F900EA1705 /* Resources */,
+				19C0E6A1AC59CD99D8C22B19 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -186,10 +218,53 @@
 			files = (
 				FB1493A2295215FB00EA1705 /* LaunchScreen.storyboard in Resources */,
 				FB14939F295215FB00EA1705 /* Assets.xcassets in Resources */,
+				FBAC1B7429545C5B0035A311 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		19C0E6A1AC59CD99D8C22B19 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Tinder-Clone/Pods-Tinder-Clone-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Tinder-Clone/Pods-Tinder-Clone-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Tinder-Clone/Pods-Tinder-Clone-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		862B8833E3632455499D7B02 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Tinder-Clone-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		FB14938E295215F900EA1705 /* Sources */ = {
@@ -204,6 +279,7 @@
 				FB1493AF2952266A00EA1705 /* MainStackView.swift in Sources */,
 				FB1493B429523CCB00EA1705 /* User.swift in Sources */,
 				FB1493AB2952229600EA1705 /* BottomStackView.swift in Sources */,
+				FB236DFA295466D000DEDF22 /* Bindable.swift in Sources */,
 				FBAC1B702953634A0035A311 /* CustomTextField.swift in Sources */,
 				FBAC1B722953856A0035A311 /* RegistrationViewModel.swift in Sources */,
 				FB1493AD2952257400EA1705 /* TopStackView.swift in Sources */,
@@ -342,6 +418,7 @@
 		};
 		FB1493A7295215FB00EA1705 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 05FB818E397F046D88589AD1 /* Pods-Tinder-Clone.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -372,6 +449,7 @@
 		};
 		FB1493A8295215FB00EA1705 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7AEF1FDE7CD5AC888E7EC592 /* Pods-Tinder-Clone.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
